@@ -3,7 +3,7 @@ let storedContactsArray = [];
 //let tasks = [];
 
 let dataFromServer = async () => {
-  setURL('https://barnabas-gonda.developerakademie.net/smallest_backend_ever');
+  setURL('https://barnabas-gonda.de/post/smallest_backend_ever');
   await downloadFromServer();
   storedContactsArray = JSON.parse(backend.getItem("contacts")) || [];
   tasks = JSON.parse(backend.getItem("keyTasks")) || [];

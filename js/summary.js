@@ -15,7 +15,7 @@ async function initSummary() {
  
 
 async function dataFromServer() {
-   setURL('https://barnabas-gonda.developerakademie.net/smallest_backend_ever');
+   setURL('https://barnabas-gonda.de/post/smallest_backend_ever');
     await downloadFromServer();
     tasks = JSON.parse(backend.getItem("keyTasks")) || [];
     users = JSON.parse(backend.getItem("users")) || [];

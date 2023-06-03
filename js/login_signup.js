@@ -3,7 +3,7 @@
 let cardContainer = document.getElementById("card-container");
 let header = document.getElementsByTagName("header")[0];
 let signupSuccess = false;
-setURL('https://barnabas-gonda.developerakademie.net/smallest_backend_ever');
+setURL('https://barnabas-gonda.de/post/smallest_backend_ever');
 
 /**
  * Main functions

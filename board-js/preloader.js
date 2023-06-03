@@ -1,5 +1,5 @@
 
- setURL('https://barnabas-gonda.developerakademie.net/smallest_backend_ever');
+ setURL('https://barnabas-gonda.de/post/smallest_backend_ever');
 
 let contacts = [];
 

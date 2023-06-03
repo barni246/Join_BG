@@ -263,6 +263,10 @@ body {
     display: flex;
   }
 
+  .header-logo {
+    margin-left: 24px;
+  }
+
   ::-webkit-scrollbar {
     width: 0;
   }

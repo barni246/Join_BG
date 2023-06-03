@@ -67,7 +67,7 @@ function openCloseLogout() {
 }
 
 async function logout() {
-   setURL('https://barnabas-gonda.developerakademie.net/smallest_backend_ever');
+   setURL('https://barnabas-gonda.de/post/smallest_backend_ever');
     await downloadFromServer();
     users = JSON.parse(backend.getItem("users")) || [];
     let index= users.findIndex(u => {

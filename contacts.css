@@ -930,7 +930,7 @@ input[type="checkbox"]:checked::before {
 .contact-input-container {
   position: relative;
   width: 100%;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 /* .contact-input-container::-webkit-scrollbar {
@@ -1353,6 +1353,23 @@ input[type="checkbox"]:checked::before {
 
   .action-button-container {
     margin-top: 0;
+  }
+
+  .popup-container {
+    border-radius: unset;
+    padding-left: 0;
+    height: 100vh;
+  }
+
+  .column-left {
+    position: unset;
+  }
+
+  .column-right {
+    height: 95vh;
+  }
+
+  .contact-input-container {
   }
 }
 

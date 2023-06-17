@@ -31,7 +31,7 @@ function renderTasks(taskArea, filterdArray) {
         const id = task['id'];
         const subtaskDone = task['subtasksCheckbox'];
         document.getElementById(taskArea).innerHTML +=  /*html*/ `
-            <div id="task${id}" ondragover = "return false"  draggable="true" ondrag="dragging(${id})"  ondragstart="startDragging(${id},event)"  onclick="openTaskPopup(${id})" class="task"></div>
+            <div id="task${id}" ondragover = "return false"  draggable="true" ondrag="dragging(${id})"   ondragstart="startDragging(${id},event)"  onclick="openTaskPopup(${id})" class="task"></div>
                 <div id="layoverTaskPopup${id}" onclick="closeTaskPopup(${id})"   class="layover-task-popup d-none"></div>
             </div> `;
         renderHTML(id, backgroundColorCategory, taskCategory, taskTitle, taskDescription, prioIconTaskSrc, names,

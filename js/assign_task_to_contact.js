@@ -5,7 +5,7 @@ let title = document.getElementById("title");
 let description = document.getElementById("description");
 let date = document.getElementById("date");
 
-let contactsOpened= false;
+let contactsOpened = false;
 
 
 //subtask elements
@@ -63,7 +63,7 @@ categoryInput.addEventListener("click", function () {
       addListenerToNewCategory();
       dropdownOpen = true;
     }
-    
+
   }
 });
 
@@ -180,7 +180,7 @@ assignedToInput.addEventListener("click", function () {
     contactsDropdown.style.display = "none";
     assignedToInput.style.borderBottom = "1px solid rgb(204, 204, 204)";
     assignedToInput.style.borderRadius = "7px";
-  } else if (!contactsDropdownOpen && !contactsOpened){
+  } else if (!contactsDropdownOpen && !contactsOpened) {
     assignedToInput.style.borderBottom = "none";
     assignedToInput.style.borderRadius = "7px 7px 0 0";
     contactsDropdown.style.display = "block";
@@ -194,13 +194,13 @@ assignedToInput.addEventListener("click", function () {
     }
     contactsDropdown.innerHTML += /*html*/ `<div class="contact"><div><img src="assets/img/icon_mail.png"> Invite new contact</div></div>`;
     contactsDropdownOpen = true;
-    contactsOpened= true;
+    contactsOpened = true;
   }
   else {
     assignedToInput.style.borderBottom = "none";
     assignedToInput.style.borderRadius = "7px 7px 0 0";
     contactsDropdown.style.display = "block";
-    contactsDropdownOpen= true;
+    contactsDropdownOpen = true;
   }
 });
 
@@ -292,14 +292,14 @@ let yyyy = today.getFullYear();
 today = yyyy + "-" + mm + "-" + dd;
 document.getElementById("date").min = today;
 
-let requiredShown= false;
-let columnName= "toDo";
+let requiredShown = false;
+let columnName = "toDo";
 
 
 async function createTask() {
   let rgb = window.getComputedStyle(categoryDot).getPropertyValue("background").match(/\d+/g).map(Number);
 
-//let rbgTaskCategory = bgTaskCategory.match(/\d+/g).map(Number);
+  //let rbgTaskCategory = bgTaskCategory.match(/\d+/g).map(Number);
   let prio = document.querySelector(".active");
   let priorityBg;
   let prioIconSrcTask;
@@ -307,10 +307,10 @@ async function createTask() {
   let prioUrgent;
   let prioMedium;
   let prioLow;
-  let bgTaskCategory= `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;  
+  let bgTaskCategory = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
 
-  let selectedContacts= [storedContactsArray[selectedUserIndex].userName];
-  let avatarColors= [storedContactsArray[selectedUserIndex].color];
+  let selectedContacts = [storedContactsArray[selectedUserIndex].userName];
+  let avatarColors = [storedContactsArray[selectedUserIndex].color];
 
   storedContactsArray.splice(selectedUserIndex, 1);
 
@@ -323,30 +323,30 @@ async function createTask() {
     }
   }
 
-  if(prio.innerText == 'Urgent'){
-        priorityBg= '#ff3d00';
-        prioIconSrcTask= 'arrow-up-red.png';
-        prioIconSrcPopup= 'arrow-up-white.png';
-        prioUrgent= true;
-        prioMedium= false;
-        prioLow= false;
+  if (prio.innerText == 'Urgent') {
+    priorityBg = '#ff3d00';
+    prioIconSrcTask = 'arrow-up-red.png';
+    prioIconSrcPopup = 'arrow-up-white.png';
+    prioUrgent = true;
+    prioMedium = false;
+    prioLow = false;
   }
-  else if(prio.innerText == 'Medium'){
-        
-        priorityBg= '#fea800';
-        prioIconSrcTask= 'equal-sign-orange.svg';
-        prioIconSrcPopup= 'equal-sign-white.svg';
-        prioUrgent= false;
-        prioMedium= true;
-        prioLow= false;
+  else if (prio.innerText == 'Medium') {
+
+    priorityBg = '#fea800';
+    prioIconSrcTask = 'equal-sign-orange.svg';
+    prioIconSrcPopup = 'equal-sign-white.svg';
+    prioUrgent = false;
+    prioMedium = true;
+    prioLow = false;
   }
-  else  {
-        priorityBg= '#79e228';
-        prioIconSrcTask= 'arrow-down-green.png';
-        prioIconSrcPopup= 'arrow-down-white.svg';
-        prioUrgent= false;
-        prioMedium= false;
-        prioLow= true;
+  else {
+    priorityBg = '#79e228';
+    prioIconSrcTask = 'arrow-down-green.png';
+    prioIconSrcPopup = 'arrow-down-white.svg';
+    prioUrgent = false;
+    prioMedium = false;
+    prioLow = true;
   }
 
   let newTask = {
@@ -366,65 +366,67 @@ async function createTask() {
     bGcolorsOfAvatar: avatarColors,
     column: columnName,
     id: tasks.length,
+    'subtasks': [],
+    'subtasksCheckbox': []
   };
-  
+
   tasks.push(newTask);
   await backend.setItem('keyTasks', JSON.stringify(tasks));
-//   closeAddTask();
-
-  columnName= "toDo";
-  window.location.href="board.html"
+  //   closeAddTask();
+  //updateHTML();
+  columnName = "toDo";
+  window.location.href = "board.html"
 }
 
 
 function formValidation2() {
-    if(checkInputs()) {
-        createTask();
+  if (checkInputs()) {
+    createTask();
 
-    }
-    else {
-        showRequired();
-    }
+  }
+  else {
+    showRequired();
+  }
 }
 
 function checkInputs() {
-    let allCorrect= true; 
-    let prio = document.querySelector(".active");
-    let data= [
-        title, description, categoryInput, date
-    ]
-    for (let i = 0; i < data.length; i++) {
-        const input = data[i];
-        if(!input.value || input.value == 'Select task category'|| input.value== "") {
-           
-            allCorrect= false;
-        }
-    }
-    if(prio == undefined) {
-        
-        allCorrect= false;
-    }
+  let allCorrect = true;
+  let prio = document.querySelector(".active");
+  let data = [
+    title, description, categoryInput, date
+  ]
+  for (let i = 0; i < data.length; i++) {
+    const input = data[i];
+    if (!input.value || input.value == 'Select task category' || input.value == "") {
 
-    return allCorrect;
+      allCorrect = false;
+    }
+  }
+  if (prio == undefined) {
+
+    allCorrect = false;
+  }
+
+  return allCorrect;
 }
 
 function showRequired() {
-    requiredShown= true;
-    let prio = document.querySelector(".active");
-    let required= document.getElementsByClassName('required');
-    let data= [
-        title, description, categoryInput, date
-    ]
-    
-    for (let i = 0; i < data.length; i++) {
-        const input = data[i];
-        if(!input.value || input.value == 'Select task category' || input.value== "") {
-            required[i].innerText = "This field is required";
-           
-        }
+  requiredShown = true;
+  let prio = document.querySelector(".active");
+  let required = document.getElementsByClassName('required');
+  let data = [
+    title, description, categoryInput, date
+  ]
+
+  for (let i = 0; i < data.length; i++) {
+    const input = data[i];
+    if (!input.value || input.value == 'Select task category' || input.value == "") {
+      required[i].innerText = "This field is required";
+
     }
-    if(prio == undefined || prio.classList.contains('nav-item')) {
-        required[required.length-1].innerText= "Priority Selection is mandatory";
-        
-    }
+  }
+  if (prio == undefined || prio.classList.contains('nav-item')) {
+    required[required.length - 1].innerText = "Priority Selection is mandatory";
+
+  }
 }

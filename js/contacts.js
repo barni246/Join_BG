@@ -123,7 +123,8 @@ function formValidation() {
   let userPattern = /^[a-zA-ZäöüÄÖÜß]+ [a-zA-ZäöüÄÖÜß]+$/;
   let mailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
   let phonePattern =
-    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,}$/;
+    ///^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,}$/;
+    /[0-9]$/;
   let allCorrect = true;
 
   for (let i = 0; i < inputs.length; i++) {

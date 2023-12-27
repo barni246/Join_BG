@@ -3,6 +3,10 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .mt-15 {
   margin-top: .8rem;
 }
@@ -368,6 +372,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   font-size: 1.2rem;
   animation: transition 1s forwards;
 }
+
+
 
 @keyframes transition {
   0% {

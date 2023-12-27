@@ -168,7 +168,8 @@ async function login() {
   });
   if (index !== -1) {
     let checkbox = document.getElementById("checkbox");
-    if (checkbox.checked) {
+    let checkboxMobile = document.getElementById("checkboxMobile");
+    if (checkbox.checked || checkboxMobile) {
       localStorage.setItem("password", password.value);
       localStorage.setItem("email", email.value);
     }
@@ -265,7 +266,7 @@ function loginCardTemplate() {
           <div class='user-input input-password'>
             <p id="invalid"></p>
             <p id="success"></p>
-            <input  id='login-password' type='password' placeholder='Password' required oninvalid="event.preventDefault(); generateTooltip(event)"/>
+            <input  id='login-password' type='password' placeholder='Password' autocomplete="off" required oninvalid="event.preventDefault(); generateTooltip(event)"/>
             <img src='assets/img/icon_lock.png' />
            
 
@@ -273,7 +274,7 @@ function loginCardTemplate() {
 
            <div class="login-mobile-forgrot-remember">
               <p class="forgot-mobile" onclick="renderForgotPassword()">Forgot my password</p>
-              <div class="remember-mobile"><input type='checkbox' id="checkbox"/><p>Remember me</p></div>
+              <div class="remember-mobile"><input type='checkbox' id="checkboxMobile"/><p>Remember me</p></div>
            </div>
           
           <div class='login-options-container'>

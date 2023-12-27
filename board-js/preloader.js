@@ -64,8 +64,8 @@ function openCloseLogout() {
 }
 
 
-async function logout() {
-    setURL('https://barnabas-gonda.developerakademie.net/smallest_backend_ever');
+ async function logout() {
+    setURL('https://barnabas-gonda.de/post/smallest_backend_ever');
      await downloadFromServer();
      users = JSON.parse(backend.getItem("users")) || [];
      let index= users.findIndex(u => {
@@ -80,3 +80,12 @@ async function logout() {
          window.location.href = "index.html";
      }
  }
+
+
+ document.addEventListener('click', (event)=> {
+    tooltip = document.getElementById('tooltip');
+    if(!tooltip.contains(event.target)){
+        tooltip.style.display = 'none';
+        logoutOpen = false;
+    }
+})

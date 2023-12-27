@@ -40,7 +40,8 @@ function addContactTemplate() {
               <label for="Phone" class="fcf-label"></label>
               <div class="fcf-input-group">
                 <!-- <input type="tel" id="phone" name="Phone" pattern="^\+49 \d{4} \d{5}$" placeholder="+49 1234 56789" required> -->
-                <input type="tel" id="phone" name="Phone" placeholder="1234567890" pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,}$/"  required>
+                <!-- <input type="tel" id="phone" name="Phone" placeholder="1234567890" pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,}$/"  required> -->
+                <input type="tel" id="phone" name="Phone" placeholder="1234567890"  required>
                 <img src="assets/img/icon_phone.png">
               </div>
             </div>

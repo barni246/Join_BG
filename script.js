@@ -30,8 +30,17 @@ function navbarToggler() {
     })
 }
 
-let logoutOpen= false;
+let logoutOpen = false;
 let tooltip; 
+
+
+document.addEventListener('click', (event)=> {
+    if(!tooltip.contains(event.target)){
+        tooltip.style.display = 'none';
+        logoutOpen = false;
+    }
+})
+
 
 function openCloseLogout() {
     

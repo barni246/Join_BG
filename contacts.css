@@ -1293,7 +1293,7 @@ input[type="checkbox"]:checked::before {
 
   .contact-scroll-container {
     height: 100%;
-    /* padding-bottom: 60px !important; */
+    padding-bottom: 200px !important;
   }
 
   /* .button-position {
@@ -1367,9 +1367,6 @@ input[type="checkbox"]:checked::before {
 
   .column-right {
     height: 95vh;
-  }
-
-  .contact-input-container {
   }
 }
 
@@ -1571,5 +1568,10 @@ screen and (max-height:667px) {
 
     .contact-list {
       padding-bottom: 200px;
+      
+    }
+
+    .contact-scroll-container {
+      padding-bottom: 0px !important;
     }
 } 
